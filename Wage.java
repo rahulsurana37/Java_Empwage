@@ -1,94 +1,45 @@
 class Wage{
-public static void main(String[] args) {
-	System.out.println("Welcome to JAVA exercise");
-	int is_Present=1;
+	public int Emp_computation(){
 	int Wage_per_hour=20;
 	int total_working_days=20;
 	int total_working_hours=0;
-	int salary_per_month=0;
-	//int Full_time_hrs=8;
-	//int Part_time_hrs=4;
-	//double absent=0;
-	//double fulltime=1;
-	//double parttime=2;
 	int salary=0;
 	int hours=0;
-	int partpay=0;
-	int fullpay=0;
 	int total_salary=0;
 	double random_Check=Math.floor(Math.random() * 10) % 2;
+	
 	for (int i=0;i<total_working_days;i++) {
 		if(total_working_hours<100) {
 		double random_Check_1=Math.floor(Math.random() * 10) % 3;
 		int random=(int)random_Check_1;
 			switch(random){
 				case 1:
-				System.out.println("Employee is present and is Full-time");
 				hours=8;
 				salary=Wage_per_hour*hours;
-				System.out.println("Salary Earned by full time employee is: "+salary);
 				break;
 				case 2:
-				System.out.println("Employee is present and is Part-time");
 			    hours=4;
 			    salary=Wage_per_hour*hours;
-				System.out.println("Salary Earned by part time employee is: "+salary);
 				break;
 				default:
 				hours=0;
 				salary=0;
-				System.out.println("Employee is absent");
 				break;
 			}
+			
 			total_salary=total_salary+salary;
-			System.out.println("Total salary till now: " +total_salary);
 			total_working_hours=total_working_hours+hours;
-			System.out.println("Total working hours till now: "+total_working_hours);
 		}
+		
 	}
-	System.out.println("Total Wage For Employee in a month: "+ total_salary);
-	//salary=Wage_per_hour*hours;
-	
-				
-	//salary_per_month=total_working_days*salary;
-	//System.out.println("Total salary earned is: "+salary_per_month);
-}
+	System.out.println("Total working hours till now: "+total_working_hours);
+	return total_salary;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	/*if (random_Check==is_Present) {
-		if (random_Check_1==fulltime) {
-			System.out.println("Employee is present and is Full-time.");
-			salary=Wage_per_hour*Full_time_hrs;
-			System.out.println("The Full time salary is "+salary);
-		}
-		else if (random_Check_1==parttime){
-			System.out.println("Employee is present and is Part-time.");
-			salary=Wage_per_hour*Part_time_hrs;
-			System.out.println("The Part time salary is "+salary);
-		}		
-	}
-	else{
-		System.out.println("Employee is absent");
-	}
+public static void main(String[] args) {
+	System.out.println("Welcome to JAVA exercise");
+	Wage abc= new Wage();
+	System.out.println("Total Salary: "+abc.Emp_computation());
 }
-}*/
+}
