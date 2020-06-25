@@ -4,7 +4,7 @@ public static void main(String[] args) {
 	int is_Present=1;
 	int Wage_per_hour=20;
 	int total_working_days=20;
-	int total_working_hours=100;
+	int total_working_hours=0;
 	int salary_per_month=0;
 	//int Full_time_hrs=8;
 	//int Part_time_hrs=4;
@@ -15,30 +15,38 @@ public static void main(String[] args) {
 	int hours=0;
 	int partpay=0;
 	int fullpay=0;
+	int total_salary=0;
 	double random_Check=Math.floor(Math.random() * 10) % 2;
-	double random_Check_1=Math.floor(Math.random() * 10) % 3;
-	for (int i=0; i<total_working_hours||i<total_working_days;i++) {
+	for (int i=0;i<total_working_days;i++) {
+		if(total_working_hours<100) {
+		double random_Check_1=Math.floor(Math.random() * 10) % 3;
 		int random=(int)random_Check_1;
 			switch(random){
 				case 1:
 				System.out.println("Employee is present and is Full-time");
 				hours=8;
 				salary=Wage_per_hour*hours;
-				fullpay=salary+fullpay;
-				System.out.println("Salary Earned by full time employee is: "+fullpay);
+				System.out.println("Salary Earned by full time employee is: "+salary);
 				break;
 				case 2:
 				System.out.println("Employee is present and is Part-time");
 			    hours=4;
 			    salary=Wage_per_hour*hours;
-				partpay=salary+partpay;
-				System.out.println("Salary Earned by part time employee is: "+partpay);
+				System.out.println("Salary Earned by part time employee is: "+salary);
 				break;
 				default:
+				hours=0;
+				salary=0;
 				System.out.println("Employee is absent");
 				break;
 			}
+			total_salary=total_salary+salary;
+			System.out.println("Total salary till now: " +total_salary);
+			total_working_hours=total_working_hours+hours;
+			System.out.println("Total working hours till now: "+total_working_hours);
+		}
 	}
+	System.out.println("Total Wage For Employee in a month: "+ total_salary);
 	//salary=Wage_per_hour*hours;
 	
 				
