@@ -9,19 +9,19 @@ public class Wage_one{
 		companyEmpWageArray = new Wage[5];
 	}
 
-	private void addWage(String company, int wagePerHr, int number_of_working_days, int max_hrs_in_month){
+	public void addWage(String company, int wagePerHr, int number_of_working_days, int max_hrs_in_month){
 		companyEmpWageArray[num_of_company]=new Wage(company, wagePerHr, number_of_working_days, max_hrs_in_month);
 		num_of_company++;
 	}
 
-	private void employee_comp() {
+	public void employee_comp() {
 		for (int i=0; i < num_of_company; i++){
 			companyEmpWageArray[i].set_total_emp_wage(this.employee_comp(companyEmpWageArray[i]));
 			System.out.println(companyEmpWageArray[i]);
 		} 
 	}
 
-	private int employee_comp(Wage companyEmpWage) {
+	 int employee_comp(Wage companyEmpWage) {
 		int hrs=0, total_hrs=0, totalWorkingDays=0;
 		while (total_hrs <= companyEmpWage.max_hrs_in_month && totalWorkingDays < companyEmpWage.number_of_working_days){
 		totalWorkingDays++;
